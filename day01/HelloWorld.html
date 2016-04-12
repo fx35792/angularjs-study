@@ -4,10 +4,49 @@
 	<meta charset="UTF-8">
 	<title>Hello World</title>
 	<script type="text/javascript" src="angular-1.0.1.min.js"></script>
+	<script type="text/javascript" src="controllers.js"></script>
+	<script type="text/javascript" src="controllersSpec.js"></script>
 </head>
 <body>
+	<p>eg1:</p>
 	<div>
 		hello {{'world'}}!
 	</div>
+	<p>eg2:</p>
+	<div>
+		<form action="">
+
+			<p>
+				<label for="">your name:</label>
+				<input type="text" ng-model="yourname" placeholder="World">
+			</p>			
+			<p>
+				hello {{yourname || 'world'}}!
+			</p>
+			<p></p>
+		</form>
+	</div>
+	<p>eg3:</p>
+	<div>
+		1+3:{{1+3}}
+	</div>
+	<p>eg4:</p>
+	<div ng-controller="PhoneListCtrl">
+		<ul>
+			<li ng-repeat="phone in phones">
+				{{phone.name}}
+				<p>{{phone.snippet}}</p>				
+			</li>
+		</ul>
+	</div>
+	<div ng-controller="PhoneListCtrl2">
+		<ul>
+			<li ng-repeat="phone in phones">
+				{{phone.name}}
+				<p>{{phone.snippet}}</p>				
+			</li>
+		</ul>
+	</div>
+
 </body>
 </html>
