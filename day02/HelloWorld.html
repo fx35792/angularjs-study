@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>数据绑定</title>
+	<script type="text/javascript" src="angular-1.0.1.min.js"></script>
+	<script type="text/javascript" src="invoice1.js"></script>
+</head>
+<body>
+	<!--案例一-->
+	<!--
+	<div ng-init="qty=1;cost=2">
+		<b>订单：</b>
+		<div>
+			数量：<input type="number" ng-model="qty" required >
+		</div>
+		<div>
+			单价：<input type="number" ng-model="cost" required >
+		</div>
+		<div>
+			<b>总价：{{qty*cost|currency}}</b>
+		</div>
+	</div>
+	-->
+	<div ng-app="invoice1" ng-controller="InvoiceController as invoice">
+		<b>订单：</b>
+		<div>
+			数量：<input type="number" min="0" ng-model="invoice.qty" required >
+		</div>
+		<div>
+			单价：<input type="number" min="0" ng-model="invoice.cost" required >
+			<select ng-model="invoice.inCurr">
+				<option ng-repeat="c in invoice.currencies">{{c}}</option>
+			</select>
+		</div>
+		<div>
+			<b>总价：</b>
+			<span ng-repeat="c in invoice.currencies">
+				{{invoice.total(c)|currency:c}}
+			</span>
+			<button class="btn" ng-click="invoice.pay()">pay</button>
+		</div>
+	</div>
+
+</body>
+</html>

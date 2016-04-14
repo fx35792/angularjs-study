@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>数据绑定</title>
+	<script type="text/javascript" src="angular-1.0.1.min.js"></script>
+	<script type="text/javascript" src="protractor.js"></script>
+	<script type="text/javascript">
+		angular.module('forExample',[])
+			.controller('FormController',['$scope',function($scope){
+				$scope.userType = 'guest';
+			}]);
+	</script>
+	<style type="text/css">
+	
+	</style>
+</head>
+<body>
+	<form name="myForm" ng-controller="FormController" class="my-form">
+		userType:<input type="text" name="input" ng-model="userType" required>
+		<span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
+		<code>userType = {{userType}}</code><br/>
+		<code>{{myForm.input.$valid}}</code><br/>
+		<code>{{myForm.input.$error}}</code><br/>
+		<code>{{myForm.$valid}}</code><br/>
+		<code>{{!!myForm.$error.required}}</code>
+	</form>
+</body>
+</html>
