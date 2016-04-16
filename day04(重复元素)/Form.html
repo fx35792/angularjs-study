@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>重复元素</title>
+	<script type="text/javascript" src="angular-1.0.1.min.js"></script>
+</head>
+<body>
+	<!--案例一-->
+	<!-- 
+	<div ng-app="" ng-init="names=['fan','xin','jone','alice','bob']">
+		<ul>
+			<li ng-repeat="x in names">
+				{{x}}
+			</li>
+		</ul>
+	</div> 
+	-->
+
+	<!--案例二-->
+	<div ng-app="" ng-init="names=[
+	{name:'fan',county:'china'},
+	{name:'jone',county:'japan'},
+	{name:'alice',county:'amrica'}
+	]">
+		<ul>
+			<li ng-repeat="x in names">
+				{{x.name+' '+x.county}}
+			</li>
+		</ul>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>重复元素</title>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+	
+</head>
+<body>
+	<div ng-app="myApp">
+		<rabit-code></rabit-code>
+		<div rabit-code></div>
+		<div class="rabit-code"></div>	
+		<!-- directive:rabit-code -->
+	</div>
+	<script type="text/javascript">
+		var myApp = angular.module("myApp",[]);
+		myApp.directive("rabitCode",function(){
+			return{
+				restrict:'EACM',
+				replace:true,//针对是restrict:M这种情况才生效
+				template:"<h2>hello world!</h2>"
+			};
+		});
+	</script>
+</body>
+</html>
