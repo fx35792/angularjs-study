@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>数据绑定</title>
+	<script type="text/javascript" src="angular-1.0.1.min.js"></script>
+</head>
+<body>
+	<form ng-app="" name="myfForm">
+		<p>
+			<label>请输入您的邮箱：</label>
+			<input type="email" name="myEmail" ng-model="text">
+		</p>
+		
+		<p ng-show="myfForm.myEmail.$error.email">这不是一个合法的邮箱地址</p>
+	</form>
+</body>
+</html>

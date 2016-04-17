@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>双向绑定</title>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+	<script type="text/javascript">
+		var myModel = angular.module("myModel",[]);
+		myModel.controller("myCtrl",function($scope){
+			$scope.name = "Fan Xin"
+		});
+	</script>
+</head>
+<body>
+	<div ng-app="myModel" ng-controller="myCtrl">
+		请输入您的名字：<input type="text" ng-model="name">
+		<p>
+			您的名字是：{{name}}
+		</p>
+	</div>
+	
+</body>
+</html>
