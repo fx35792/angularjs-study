@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数据绑定</title>
+	<script src="angular-1.0.1.min.js"></script>
+</head>
+<body>
+	
+<div ng-app="myApp" ng-controller="myCtrl">
+	{{yourName}}
+</div>
+<script type="text/javascript">
+	var myApp = angular.module("myApp",[]);
+	myApp.controller('myCtrl', function($scope){
+		$scope.yourName = "FanXin";
+	});
+</script>
+</body>
+</html>
