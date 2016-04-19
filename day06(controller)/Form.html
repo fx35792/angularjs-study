@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>model</title>
+	<script type="text/javascript" src="angular-1.0.1.min.js"></script>
+	<script type="text/javascript" src="myNameCtrl.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<p>
+			<label>你的姓：</label>
+			<input type="text" ng-model="firstName">
+		</p>
+		<p>
+			<label>你的名：</label>
+			<input type="text" ng-model="lastName">
+		</p>
+		<p>
+			<label>你的姓名叫：</label>
+			{{fullName()}}
+		</p>
+	</div>
+</body>
+</html>

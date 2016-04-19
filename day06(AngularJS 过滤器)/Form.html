@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>model</title>
+	<script type="text/javascript" src="angular-1.0.1.min.js"></script>
+	<script type="text/javascript" src="myNameCtrl.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<!--uppercase 将字母转换成为大写-->
+		{{myName|uppercase}}
+		<br/>
+		<!--lowercase 将字母转换成为大写-->
+		{{yourName|lowercase}}
+		<br/>
+		<!--currency 将数字转换成为美元-->
+		{{number|currency}}
+		<br/>
+		<input type="text" ng-model="test">
+		<!-- orderBy 可以根据属性来排序 下面是按照字母来排序的 -->
+		<br/>
+		<ul>
+			<li ng-repeat="x in names|filter:test|orderBy:'city'">
+				{{x.name + " " + x.city}}
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

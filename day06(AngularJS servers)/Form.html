@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取当前页面的路径</title>
+	<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+	<script type="text/javascript" src="myNameCtrl.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<p>
+			<label>获取当前页面的url</label>
+			<span>{{currentUrl}}</span>
+		</p>
+		<p>
+			姓名由SunnyFan2秒后变成Frances:{{currentTitle}}
+		</p>
+		<p>
+			时间是：{{theTime}}
+		</p>
+		<p>
+			<b>{{hex}}</b>
+		</p>
+
+	</div>
+</body>
+</html>
