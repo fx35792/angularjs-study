@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>angular Js表格</title>
+	<script src="angular-1.0.1.min.js"></script>
+	<style type="text/css">
+	table ,th,td{
+		border:1px solid grey;
+		border-collapse:collapse;
+		padding:5px;
+	}
+/*	table tr:nth-child(odd){
+		background: #f1f1f1;
+	}
+	table tr:nth-child(even){
+		background: #fff;
+	}*/
+
+	</style>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		 <table>
+		 	<tr ng-repeat="x in names|orderBy:'name'" >
+		 		<td>{{$index+1}}</td>
+		 		<td>{{x.name|lowercase}}</td>
+		 		<td>{{x.city|uppercase}}</td>
+		 	</tr>		 	
+		 </table>
+	</div>
+	<script type="text/javascript">
+		
+		var myApp = angular.module("myApp",[]);
+		myApp.controller("myCtrl",function($scope){			
+			$scope.names = [
+				{name:"Fan",city:"handan"},
+				{name:"Xu",city:"jiangsu"},
+				{name:"Jay",city:"taiwan"},
+			];
+			
+		});
+	</script>
+</body>
+</html>

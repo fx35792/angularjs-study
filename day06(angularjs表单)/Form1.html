@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>angularjs 表单验证</title>
+	<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<form name="myForm" novalidate>
+			<p>
+				<label>用户名：</label>
+				<input type="text" name="user" ng-model="user" required>
+				<span ng-show="myForm.user.$dirty && myForm.user.$invalid" style="color:#f00">
+				<span ng-show="myForm.user.$error.required">用户名是必须的</span>
+				</span>
+			</p>
+			<p>
+				<label>邮 箱：</label>
+				<input type="email" name="email" ng-model="email" required>
+				<span ng-show="myForm.email.$dirty && myForm.email.$invalid" style="color:#f00">
+					<span ng-show="myForm.email.$error.required">邮箱是必须的</span>
+					<span ng-show="myForm.email.$error.email">邮箱格式不正确</span>
+				</span>
+			</p>
+			<p>
+				<input type="submit" ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||
+					myForm.email.$dirty && myForm.email.$invalid" >
+			</p>
+		</form>
+	</div>	
+	<script>
+		var myApp = angular.module("myApp",[]);
+		myApp.controller("myCtrl",function($scope){
+			$scope.user= "fan";
+			$scope.email="fx35792@gmail.com"
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>angularjs 表单</title>
+	<script src="angular-1.0.1.min.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<form novalidate>
+			<p>
+				<label>姓：</label>
+				<input type="text" ng-model="user.firstName">
+			</p>
+			<p>
+				<label>名：</label>
+				<input type="text" ng-model="user.lastName">
+			</p>
+			<p>
+				master={{master}}
+			</p>
+			<p>
+				user={{user}}
+			</p>
+			<p>
+				<button ng-click="reset()">reset</button>
+			</p>
+		</form>
+	</div>
+	<script type="text/javascript">
+		var myApp = angular.module("myApp",[]);
+		myApp.controller("myCtrl",function($scope){
+			$scope.master={
+				firstName:"Fan",
+				lastName:"xin",
+			}
+			$scope.reset = function(){
+				$scope.user = angular.copy($scope.master);
+			}
+			$scope.reset();
+		});
+	</script>	
+</body>
+</html>

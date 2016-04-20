@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>$rootScope</title>
+	<script src="angular-1.0.1.min.js"></script>
+	<script type="text/javascript" src="personNameCtrl.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<p>
+			<label>姓：</label>
+			<input type="text" ng-model="firstName">
+		</p>
+		<p>
+			<label>名：</label>
+			<input type="text" ng-model="lastName">
+		</p>
+		<p>
+			<label>您的名字是：</label>
+			{{funllName()}}
+		</p>
+	</div>	
+</body>
+</html>
